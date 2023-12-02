@@ -12,16 +12,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-$a = ['23','as'];
-$b = $a;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/customer', function () {
-    return response()->json(
-        [
-            "name"=>"Yulia",
-            "age"=>23
-        ]);
-});
+//Продажи
+Route::prefix('/sales')->group(base_path('routes/sections/sales.php'));
+Route::prefix('/products')->group(base_path('routes/sections/products.php'));
