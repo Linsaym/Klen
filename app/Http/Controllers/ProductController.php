@@ -10,6 +10,19 @@ class ProductController extends Controller
 {
     public function index()
     {
+        return Product::select(
+            [
+                'products.id',
+                'products.name',
+                'products.price',
+                'products.height',
+                'pots.name'
+            ])->join('pots','pot_id', '=','pots.id')->get();
+    }
+
+    public function getList()
+    {
+        //TODO Переделать фронтенд на get List страница с продажами
         return Product::select(['id', DB::raw('CONCAT(name, " ", height) AS name')])->get();
     }
 

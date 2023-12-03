@@ -11,7 +11,6 @@ return new class extends Migration {
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->integer('count');
             $table->integer('price');
             $table->foreignId('pot_id')->nullable()->constrained('pots');
             $table->integer('height')->nullable();
