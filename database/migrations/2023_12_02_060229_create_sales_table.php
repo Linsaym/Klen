@@ -13,7 +13,8 @@ return new class extends Migration {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id')->constrained('products');
-            $table->foreignId('shop_id')->constrained('shops');
+            $table->foreignId('shop_id')->nullable()->constrained('shops');
+            $table->integer('count');
             $table->timestamps();
         });
     }
