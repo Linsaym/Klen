@@ -16,8 +16,8 @@ class ProductController extends Controller
                 'products.name',
                 'products.price',
                 'products.height',
-                'pots.name'
-            ])->join('pots','pot_id', '=','pots.id')->get();
+                'pots.name as pot'
+            ])->leftJoin('pots', 'pot_id', '=', 'pots.id')->get();
     }
 
     public function getList()
