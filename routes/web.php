@@ -20,3 +20,4 @@ Route::get('/', function () {
 //Продажи
 Route::prefix('/sales')->group(base_path('routes/sections/sales.php'));
 Route::prefix('/products')->group(base_path('routes/sections/products.php'));
+Route::prefix('/tasks')->group(base_path('routes/sections/tasks.php'));
